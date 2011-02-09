@@ -1,0 +1,53 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"> 
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+  <head>
+    <title>In Serif: {% block title %}{% endblock %}</title>
+
+    <meta name="Description"
+      content="A publishing tool for stylish digital documents.">
+
+    <link rel="stylesheet" type="text/css"
+      href="/static/css/reset.css" />
+
+    <link rel="stylesheet" type="text/css"
+      href="/static/css/main.css" />
+  </head>
+
+<body>
+  <div id="wrapper">
+
+    <div id="header">
+      <div id="main">
+        <h1 class="banner"><a href="{% url text_home %}">In Serif</a></h1>
+        <ul class="navigation">
+          {% if not user.is_authenticated %}
+          <li><a href="{% url registration_register %}">Register</a></p>
+          {% endif %}
+          <li><a href="{% url text_upload %}">Add a new file</a></li>
+          <li><a href="{% url text_browse %}">Browse files</a></li>
+        </ul> 
+      </div>
+
+      {% if user.is_authenticated %}
+        <p class="logout">Hi there, {{ user.username }}. Do you want to <a href="{% url auth_logout %}">log out</a>?</p>
+
+      {% else %}
+        <form class="login" method="post" action="{% url auth_login %}">
+          {% csrf_token %}
+          <p><label for="id_username" class="username">Username:</label><input id="id_username" type="text" name="username" maxlength="30" /></p>
+          <p><label for="id_password" class="password">Password:</label><input type="password" name="password" id="id_password" /></p>
+          <input type="submit" value="Log In" />
+          <input type="hidden" name="next" value="{{ request.get_full_path }}" />
+        </form> 
+      {% endif %}
+    </div> <!-- /header -->
+
+    <div id="content">
+      {% block content %}
+      {% endblock %}
+    </div>
+
+  </div> <!-- /wrapper -->
+</body>
+</html>

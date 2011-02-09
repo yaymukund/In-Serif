@@ -1,0 +1,155 @@
+/* Layout */
+body {
+    text-align: center;
+    background-color: #f2ebed;
+}
+
+#wrapper {
+    width: 950px;
+    text-align: left;
+    padding: 1em 2em;
+    margin: 0 auto;
+    background-color: white;
+}
+
+#header {
+    clear: both;
+    display: block;
+    height: 7.5em;
+}
+
+    #main {
+        display: block;
+        float: left;
+    }
+
+        #header h1.banner {
+            margin-bottom: 1em;
+            width: 12em;
+        }
+
+        ul.navigation {
+            position: relative;
+            display: inline;
+        }
+
+            ul.navigation li {
+                float: left;
+                display: block;
+                position: relative;
+                margin-right: 1.9em;
+            }
+
+
+    form.login {
+        width: 10em;
+        display: block;
+        margin-left: 52.5em;
+    }
+
+    p.logout {
+        text-align: right;
+        width: 46em;
+        margin-left: 13em;
+    }
+
+
+#content {
+    padding-top: 2em;
+    width: 40em;
+}
+
+    li.document { margin-bottom: 2em; }
+
+/* Typography */
+* {
+    font-family: Georgia, "Times New Roman", serif;
+    line-height: 1.4em;
+}
+
+h1.banner a:link, h1.banner a:visited {
+    color: black;
+    text-decoration: none;
+    font-size: 3em;
+    font-style: italic;
+}
+
+a:link, a:visited {
+    color: #6091c4;
+}
+
+h2.title {
+    font-size: 1.5em;
+}
+
+h3.author {
+    color: #333;
+    font-style: italic;
+    margin-bottom: 0.75em;
+}
+
+span.date {
+    font-style: italic;
+    color: #333;
+    padding-left: 0.4em;
+}
+
+div.text li { list-style-type: disc; }
+div.text ul { margin-left: 1em; }
+div.text p { margin-bottom: 1em; }
+
+/* Navigation */
+
+ul.navigation li {
+    list-style-type: none;
+    background-color: #d8e4f2;
+    padding: 0.25em 0.5em 0.35em 0.3em;
+    border: 1px solid #8fa1b5;
+    border-top-color: #bad7f7;
+    border-right-color: #bad7f7;
+}
+
+    ul.navigation li a:link, a:visited {
+        color: #557887;
+        text-decoration: none;
+        font-style: italic;
+    }
+
+    ul.navigation li:hover {
+        background-color: #a3c8d9;
+    }
+
+/* Banner */
+#banner {
+    text-align: center;
+    background-color: #d8e4f2;
+    width: 20em;
+    padding: 1em 1.75em 1em 0.25em;
+    float: left;
+    border: 1px solid #8fa1b5;
+    border-top-color: #bad7f7;
+    border-right-color: #bad7f7;
+}
+
+    p#catchphrase {
+        text-shadow: -1px -1px 0 white;
+        color: #4A93B5;
+        font-size: 2em;
+        font-weight: bold;
+        font-style: italic;
+        line-height: 1.25em;
+        text-align: right;
+        margin-bottom: 0.5em;
+    }
+
+    p#instructions {
+        text-align: right;
+        font-size: 1.25em;
+        line-height: 1.15em;
+        font-style: italic;
+        color: #80b3cb;
+    }
+
+form#frontpage {
+    margin-left: 25em;
+}

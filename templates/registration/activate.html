@@ -1,0 +1,8 @@
+{% extends "base.html" %}
+
+{% block title %}Whoops{% endblock %}
+
+{% block content %}
+<p>It seems you've entered the wrong activation key:</p>
+<p>{{ activation_key }} is not a valid key.</p>
+{% endblock %}

@@ -1,0 +1,20 @@
+{% extends "base.html" %}
+{% load markup %}
+
+{% block title %}Browse all documents{% endblock %}
+{% block content %}
+<ul class="documents">
+  {% for document in document_list %}
+  <li class="document">
+  <a href="{% url text_document document.id %}"><h2 class="title">{{ document.title }}</h2></a>
+    <h3 class="author">by {{ document.author }}</h3>
+    <div class="text">{{ document.content|truncatewords_html:100|textile }}</div>
+    <a class="edit" href="{% url text_edit document.id %}">Edit</a><span class="date">/ posted on {{ document.created|date:"DATE_FORMAT" }}</span>
+  </li>
+
+  {% empty %}
+    <li>Sorry, you haven't uploaded anything yet.</li>
+  
+  {% endfor %}
+</ul>
+{% endblock %}

@@ -1,0 +1,12 @@
+{% extends "base.html" %}
+{% load markup %}
+
+{% block title %}{{ document.title }}{% endblock %}
+{% block content %}
+<div class="document">
+  <h2 class="title">{{ document.title }}</h2>
+  <h3 class="author">by {{ document.author }}</h3>
+  <div class="text">{{ document.content|textile }}</div>
+  <a href="{% url text_edit document.id %}">Edit</a><span class="date">/ posted on {{ document.created|date:"DATE_FORMAT" }}</span>
+</div>
+{% endblock %}

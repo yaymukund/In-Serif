@@ -1,0 +1,17 @@
+{% extends "base.html" %}
+
+{% block title %}Create a new document.{% endblock %}
+
+{% block content %}
+
+{% if document %}
+    <form action="{% url text_update document.id %}" method="post">
+{% else %}
+    <form action="{% url text_create %}" method="post">
+{% endif %}
+
+{% csrf_token %}
+{{ form.as_p }}
+<input type="submit" value="Submit" />
+</form>
+{% endblock %}

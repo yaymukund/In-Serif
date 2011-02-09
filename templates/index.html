@@ -1,0 +1,15 @@
+{% extends "base.html" %}
+
+{% block title %}Home{% endblock %}
+{% block content %}
+<div id="banner">
+    <p id="catchphrase">Why wouldn&rsquo;t you write in serif?</p>
+    <p id="instructions">Enter text on the right and hit submit to see it in serif.</p>
+</div>
+
+<form action="{% url text_create %}" id="frontpage" method="post">
+{% csrf_token %}
+{{ form.as_p }}
+<input type="submit" value="Submit" />
+</form>
+{% endblock %}

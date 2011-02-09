@@ -1,0 +1,8 @@
+Django==1.2.3
+distribute==0.6.14
+django-extensions==0.5
+-e hg+http://bitbucket.org/ubernostrum/django-registration@d36a38202ee3d09d342b000f4ff634296f90df49#egg=django_registration-tip
+path==2.2
+textile==2.1.4
+wsgiref==0.1.2
+yolk==0.4.1

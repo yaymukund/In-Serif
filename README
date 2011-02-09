@@ -1,0 +1,39 @@
+README - In Serif
+====== = == ====
+
+Hello there,
+
+In Serif is an application that creates and maintains stylized text files. Out
+of the box, it can:
+
+* Register users via http://url.com/register
+* Add documents via http://url.com/upload
+* Access documents via http://url.com/<id>, a pretty short URL!
+* Edit documents via http://url.com/edit/<id>
+* Browse your documents via http://www.url.com/browse/
+* Create private documents that only you can see.
+
+For those of you interested in the source, all the custom code is in apps/
+
+/apps/core -- This pulls everything together using a simple urls.py, that
+              combines django-registration and django
+
+/apps/text -- The text app contains the bulk of the application, including the
+              Document() model and views to create, edit, and view documents.
+
+/env/ -- A virtualenv that makes the installation portable. This isn't checked
+         in to the SVN, so you might have to generate it yourself. See:
+            http://www.saltycrane.com/blog/2009/05/
+                notes-using-pip-and-virtualenv-django/
+
+/REQUIREMENTS -- Contains the pip freeze file, with python module requirements
+                 for the application. Install using pip -E env -r REQUIREMENTS.
+
+TODO:
+====
+
+- Make apps/text/ truly portable and add a useful interface for future
+  developers.
+
+- Add JQuery to speed up the interface and tweak the font/spacing easily.
+  Maybe add sliders. Everybody likes sliders.
